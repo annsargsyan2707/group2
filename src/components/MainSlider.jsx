@@ -5,8 +5,9 @@ import { Box, Typography, CardMedia } from "@mui/material";
 import HomeIcon from "@mui/icons-material/Home";
 import InfoIcon from "@mui/icons-material/Info";
 import ContactMailIcon from "@mui/icons-material/ContactMail";
+import PercentIcon from "@mui/icons-material/Percent";
 
-const HeaderWithIcons = ({ icons }) => (
+ const HeaderWithIcons = ({ icons }) => (
   <>
     {icons.map((icon, index) => (
       <Box
@@ -20,7 +21,7 @@ const HeaderWithIcons = ({ icons }) => (
           color: "#fff",
         }}
       >
-        {icon.component}
+        {/* {icon.component} */}
       </Box>
     ))}
   </>
@@ -29,7 +30,7 @@ const CenteredText = ({ text }) => (
   <Box
     sx={{
       position: "absolute",
-      top: "50%",
+      top: "10%",
       left: "50%",
       transform: "translate(-50%, -50%)",
       display: "flex",
@@ -41,7 +42,9 @@ const CenteredText = ({ text }) => (
       padding: "10px",
     }}
   >
-    <Typography variant="h4">{text}</Typography>
+    <Typography variant="h4" sx={{ fontWeight: "bold" }}>
+      {text}
+    </Typography>
   </Box>
 );
 
@@ -49,28 +52,29 @@ const SlideshowWithFixedIconsAndCenteredText = () => {
   const slides = [
     {
       image:
-        "https://www.shutterstock.com/image-photo/school-notebook-on-blue-background-260nw-753361672.jpg",
+        "https://www.shutterstock.com/image-photo/back-school-concept-colorful-stationary-260nw-1076332547.jpg",
       icons: [
         {
-          component: <HomeIcon sx={{ fontSize: 40 }} />,
+          component: <PercentIcon sx={{ fontSize: 60 }} />,
           text: "Home",
           position: { top: "10%", left: "10%" },
         },
         {
-          component: <InfoIcon sx={{ fontSize: 40 }} />,
+          component: <PercentIcon sx={{ fontSize: 60 }} />,
           text: "Info",
           position: { top: "50%", left: "30%" },
         },
         {
-          component: <ContactMailIcon sx={{ fontSize: 40 }} />,
+          component: <PercentIcon sx={{ fontSize: 60 }} />,
           text: "Contact",
           position: { top: "70%", left: "70%" },
         },
       ],
-      text: "Welcome to Our Site!",
+      text: "Exclusive Sales!",
     },
     {
-      image: "https://www.example.com/image2.jpg",
+      image:
+        "https://st.depositphotos.com/2071131/3014/i/450/depositphotos_30142037-stock-photo-notebooks-pens-and-stickers.jpg",
       icons: [
         {
           component: <ContactMailIcon sx={{ fontSize: 40 }} />,
@@ -83,10 +87,11 @@ const SlideshowWithFixedIconsAndCenteredText = () => {
           position: { top: "60%", left: "50%" },
         },
       ],
-      text: "Our Latest Updates!",
+      text: "More Choice!",
     },
     {
-      image: "https://www.example.com/image3.jpg",
+      image:
+        "https://img.freepik.com/free-photo/book-composition-with-open-book_23-2147690555.jpg",
       icons: [
         {
           component: <InfoIcon sx={{ fontSize: 40 }} />,
@@ -104,7 +109,7 @@ const SlideshowWithFixedIconsAndCenteredText = () => {
           position: { top: "75%", left: "20%" },
         },
       ],
-      text: "Explore Our Services!",
+      text: "Start With Us!",
     },
   ];
 

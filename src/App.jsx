@@ -1,10 +1,11 @@
 import "./App.css";
 import MainSlider from "./components/MainSlider";
+import { SalesPage } from "./components/SalesPage";
 
 function App() {
   return (
     <div>
-      <MainSlider />
+      <SalesPage />
     </div>
   );
 }
