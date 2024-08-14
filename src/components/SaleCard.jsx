@@ -1,17 +1,18 @@
 import React from "react";
-import {
-  Card,
-  CardActions,
-  CardContent,
-  CardMedia,
-  Button,
-  Typography,
-} from "@mui/material";
+import { Card, CardContent, CardMedia, Typography } from "@mui/material";
 
-export default function SaleCard({ title, image, description }) {
+export default function SaleCard({ title, image, description, imageHeight }) {
   return (
-    <Card sx={{ maxWidth: 345 }}>
-      <CardMedia sx={{ height: 140 }} image={image} title={title} />
+    <Card sx={{ maxWidth: "100%" }}>
+      <CardMedia
+        sx={{
+          height: `${imageHeight}px`,
+          objectFit: "cover",
+        }}
+        image={image}
+        title={title}
+        component="img"
+      />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           {title}
@@ -20,10 +21,6 @@ export default function SaleCard({ title, image, description }) {
           {description}
         </Typography>
       </CardContent>
-      <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
-      </CardActions>
     </Card>
   );
 }
