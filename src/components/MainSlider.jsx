@@ -4,8 +4,8 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Box, Typography, CardMedia } from "@mui/material";
 import HomeIcon from "@mui/icons-material/Home";
 import InfoIcon from "@mui/icons-material/Info";
-import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
-import PercentIcon from "@mui/icons-material/Percent";
+import ContactMailIcon from "@mui/icons-material/ContactMail";
+
 const HeaderWithIcons = ({ icons }) => (
   <>
     {icons.map((icon, index) => (
@@ -20,7 +20,7 @@ const HeaderWithIcons = ({ icons }) => (
           color: "#fff",
         }}
       >
-        {icon.component}
+        {/* {icon.component} */}
       </Box>
     ))}
   </>
@@ -29,7 +29,7 @@ const CenteredText = ({ text }) => (
   <Box
     sx={{
       position: "absolute",
-      top: "30%",
+      top: "50%",
       left: "50%",
       transform: "translate(-50%, -50%)",
       display: "flex",
@@ -41,7 +41,9 @@ const CenteredText = ({ text }) => (
       padding: "10px",
     }}
   >
-    <Typography variant="h4">{text}</Typography>
+    <Typography variant="h4" sx={{ fontWeight: "bold" }}>
+      {text}
+    </Typography>
   </Box>
 );
 
@@ -49,29 +51,28 @@ const SlideshowWithFixedIconsAndCenteredText = () => {
   const slides = [
     {
       image:
-        "https://static-basket-01.wbbasket.ru/vol1/crm-bnrs/poster/ru/bignew/992x413/school_sale_992.webp",
+        "https://www.shutterstock.com/image-photo/school-notebook-on-blue-background-260nw-753361672.jpg",
       icons: [
         {
-          component: <ShoppingBasketIcon sx={{ fontSize: 40 }} />,
-
+          component: <HomeIcon sx={{ fontSize: 40 }} />,
+          text: "Home",
           position: { top: "10%", left: "10%" },
         },
         {
-          component: <ShoppingBasketIcon sx={{ fontSize: 40 }} />,
-
+          component: <InfoIcon sx={{ fontSize: 40 }} />,
+          text: "Info",
           position: { top: "50%", left: "30%" },
         },
         {
-          component: <ShoppingBasketIcon sx={{ fontSize: 40 }} />,
-
-          position: { top: "50%", left: "90%" },
+          component: <ContactMailIcon sx={{ fontSize: 40 }} />,
+          text: "Contact",
+          position: { top: "70%", left: "70%" },
         },
       ],
-      text: "MAJOR SAVING!",
+      text: "Welcome to Our Site!",
     },
     {
-      image:
-        "https://universalbranding.co.uk/wp-content/uploads/branded/paper-and-pads/notebooks/a5-deluxe-design-notebook-cover-grey-m_400.jpg",
+      image: "https://www.example.com/image2.jpg",
       icons: [
         {
           component: <PercentIcon sx={{ fontSize: 40 }} />,
@@ -84,11 +85,10 @@ const SlideshowWithFixedIconsAndCenteredText = () => {
           position: { top: "60%", left: "50%" },
         },
       ],
-      text: "MORE CHOICE!",
+      text: "Our Latest Updates!",
     },
     {
-      image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTG38Wyw_9ZjgfKKkSbBxrgIS6SfDG8G-T2oQ&s",
+      image: "https://www.example.com/image3.jpg",
       icons: [
         {
           component: <InfoIcon sx={{ fontSize: 40 }} />,
@@ -106,7 +106,7 @@ const SlideshowWithFixedIconsAndCenteredText = () => {
           position: { top: "75%", left: "20%" },
         },
       ],
-      text: "Explore Our Services!",
+      text: "Start With Us!",
     },
   ];
 
